@@ -1,4 +1,4 @@
-let salarioBruto = 3000;
+let salarioBruto = 7000;
 let aliquotaInss = undefined;
 let descontoINSS = undefined;
 let aliquotaIr = undefined;
