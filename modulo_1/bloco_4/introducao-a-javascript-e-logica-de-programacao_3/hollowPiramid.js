@@ -14,17 +14,19 @@ if (n % 2 === 0) {
 
 let spaceLeft = "";
 let spaceRight = "";
-let asterisc = "";
+let asteriscLeft = "";
+let asteriscRight = "";
 let numberOfLines = (n + 1) / 2;
 
 for (let index = 1; index <= n; index += 2) {
     spaceLeft = " ".repeat(n - numberOfLines);
-    spaceRight = " ".repeat(n - numberOfLines);
     numberOfLines += 1;
     if (index === 1 || index === n) {
-        asterisc = "*".repeat(index);
+        asteriscLeft = "*".repeat(index);
     }   else {
-        asterisc = "*".repeat(1);
+        asteriscLeft = "*".repeat(1);
+        spaceRight = " ".repeat(n - numberOfLines);
+        asteriscRight = "*".repeat(1);
     }
-    console.log(spaceLeft + asterisc);  
+    console.log(spaceLeft + asteriscLeft + spaceRight + asteriscRight);  
 }
