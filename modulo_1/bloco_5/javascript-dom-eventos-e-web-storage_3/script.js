@@ -20,6 +20,7 @@ function createDaysOfTheWeek() {
   const fridays = [4, 11, 18, 25];
 
   const ulDays = document.querySelector('#days');
+  const buttonsContainer = document.querySelector('.buttons-container');
 
   function monthBuilder() {
     for (let index = 0; index < dezDaysList.length; index += 1) {
@@ -42,3 +43,12 @@ function createDaysOfTheWeek() {
   }
 
   monthBuilder();
+
+  function createButton(string) {
+    let button = document.createElement('button');
+    button.id = 'btn-holiday';
+    button.innerHTML = string;
+    buttonsContainer.appendChild(button);
+  }
+
+  createButton('Feriados');
