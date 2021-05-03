@@ -87,6 +87,15 @@
         let divLeftContent = document.createElement('div');
         divLeftContent.className = 'left-content';
         document.querySelector('.main-content').appendChild(divLeftContent);
+        
+        let divRightContent = document.createElement('div');
+        divRightContent.className = 'right-content';
+        document.querySelector('.main-content').appendChild(divRightContent);
+
+        let img = document.createElement('img');
+        img.className = 'small-image';
+        img.src = 'https://picsum.photos/200';
+        document.querySelector('.left-content').appendChild(img);
 
     </script>
   </body>
