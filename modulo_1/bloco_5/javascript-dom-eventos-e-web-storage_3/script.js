@@ -143,7 +143,7 @@ function toggleTask(event) {
 document.querySelector('.task, .task-selected').addEventListener('click', toggleTask);
 
 function selectDayForTask(event) {
-    event.target.style.color = document.querySelector('.task-selected').style.backgroundColor;
+    event.target.style.color = document.querySelector('.task-selected').style.backgroundColor; // it breaks if there is no element with class task-selected and backgroundColor style property
 }
 
 for (let index = 0; index < liDay.length; index += 1) {
