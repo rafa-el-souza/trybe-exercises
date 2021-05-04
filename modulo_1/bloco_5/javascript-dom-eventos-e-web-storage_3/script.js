@@ -119,11 +119,25 @@ function createTask(string) {
 
 createTask('Cozinhar');
 
-function colorTask(colorString) {
+function taskColor(colorString) {
     let colorDiv = document.createElement('div');
     colorDiv.style.backgroundColor = colorString;
     colorDiv.className = 'task';
     myTasks.appendChild(colorDiv);
 }
 
-colorTask('aquamarine');
+taskColor('aquamarine');
+
+let taskSelected = false;
+function toggleTask(event) {
+    taskSelected = !taskSelected;
+    if (taskSelected) {
+        event.target.classList.add('task-selected');
+        event.target.classList.remove('task');
+    } else {
+        event.target.classList.add('task');
+        event.target.classList.remove('task-selected');
+    }
+};
+
+document.querySelector('.task, .task-selected').addEventListener('click', toggleTask);
