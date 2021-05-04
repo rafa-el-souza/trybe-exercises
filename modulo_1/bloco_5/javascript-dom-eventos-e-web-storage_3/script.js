@@ -45,10 +45,10 @@ function monthBuilder() {
 monthBuilder();
 
 function createHolidayButton(string) {
-let button = document.createElement('button');
-button.id = 'btn-holiday';
-button.innerHTML = string;
-buttonsContainer.appendChild(button);
+    let button = document.createElement('button');
+    button.id = 'btn-holiday';
+    button.innerHTML = string;
+    buttonsContainer.appendChild(button);
 }
 
 createHolidayButton('Feriados');
@@ -95,3 +95,18 @@ function highlightFridays() {
 }
 
 document.querySelector('#btn-friday').addEventListener('click', highlightFridays);
+
+function zoomIn(event) {
+    event.target.style.fontSize = '40px';
+}
+
+function zoomOut(event) {
+    event.target.style.fontSize = '20px';
+}
+
+let liDay = document.querySelectorAll('.day');
+for (let index = 0; index < liDay.length; index += 1) {
+    liDay[index].addEventListener('mouseover', zoomIn);
+    liDay[index].addEventListener('mouseout', zoomOut);
+}
+
