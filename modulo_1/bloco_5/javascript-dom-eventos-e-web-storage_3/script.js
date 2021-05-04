@@ -122,7 +122,7 @@ createTask('Cozinhar');
 function taskColor(colorString) {
     let colorDiv = document.createElement('div');
     colorDiv.style.backgroundColor = colorString;
-    colorDiv.className = 'task';
+    colorDiv.className = 'task-selected';
     myTasks.appendChild(colorDiv);
 }
 
@@ -141,3 +141,11 @@ function toggleTask(event) {
 };
 
 document.querySelector('.task, .task-selected').addEventListener('click', toggleTask);
+
+function selectDayForTask(event) {
+    event.target.style.color = document.querySelector('.task-selected').style.backgroundColor;
+}
+
+for (let index = 0; index < liDay.length; index += 1) {
+    liDay[index].addEventListener('click', selectDayForTask);
+}
