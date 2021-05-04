@@ -44,14 +44,14 @@ function createDaysOfTheWeek() {
 
   monthBuilder();
 
-  function createButton(string) {
+  function createHolidayButton(string) {
     let button = document.createElement('button');
     button.id = 'btn-holiday';
     button.innerHTML = string;
     buttonsContainer.appendChild(button);
   }
 
-  createButton('Feriados');
+  createHolidayButton('Feriados');
 
   let holiday = document.getElementsByClassName('holiday');
   let clicked = false;
@@ -68,4 +68,13 @@ function createDaysOfTheWeek() {
     }
   }
 
-  document.addEventListener('click', highlightHolidays);
+  document.querySelector('#btn-holiday').addEventListener('click', highlightHolidays);
+
+function createFridayButton(string) {
+    let button = document.createElement('button');
+    button.id = 'btn-friday';
+    button.innerHTML = string;
+    buttonsContainer.appendChild(button);
+}
+
+createFridayButton('Sexta-feira');
