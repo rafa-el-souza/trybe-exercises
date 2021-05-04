@@ -110,11 +110,20 @@ for (let index = 0; index < liDay.length; index += 1) {
     liDay[index].addEventListener('mouseout', zoomOut);
 }
 
+let myTasks = document.querySelector('.my-tasks');
 function createTask(string) {
     let task = document.createElement('span');
     task.innerHTML = string;
-    let myTasks = document.querySelector('.my-tasks');
     myTasks.appendChild(task);
 }
 
 createTask('Cozinhar');
+
+function colorTask(colorString) {
+    let colorDiv = document.createElement('div');
+    colorDiv.style.backgroundColor = colorString;
+    colorDiv.className = 'task';
+    myTasks.appendChild(colorDiv);
+}
+
+colorTask('aquamarine');
