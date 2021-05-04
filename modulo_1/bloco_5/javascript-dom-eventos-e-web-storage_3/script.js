@@ -52,3 +52,20 @@ function createDaysOfTheWeek() {
   }
 
   createButton('Feriados');
+
+  let holiday = document.getElementsByClassName('holiday');
+  let clicked = false;
+  function highlightHolidays() {
+    clicked = !clicked;
+    if (clicked) {
+        for (let index = 0; index < holiday.length; index += 1) {
+            holiday[index].style.backgroundColor = 'green';
+        };
+    } else {
+        for (let index = 0; index < holiday.length; index += 1) {
+            holiday[index].style.backgroundColor = '#eee';
+        };
+    }
+  }
+
+  document.addEventListener('click', highlightHolidays);
