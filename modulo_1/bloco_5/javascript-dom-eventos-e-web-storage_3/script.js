@@ -110,3 +110,11 @@ for (let index = 0; index < liDay.length; index += 1) {
     liDay[index].addEventListener('mouseout', zoomOut);
 }
 
+function createTask(string) {
+    let task = document.createElement('span');
+    task.innerHTML = string;
+    let myTasks = document.querySelector('.my-tasks');
+    myTasks.appendChild(task);
+}
+
+createTask('Cozinhar');
