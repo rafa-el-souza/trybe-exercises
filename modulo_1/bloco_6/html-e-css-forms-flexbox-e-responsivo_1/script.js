@@ -63,6 +63,9 @@ const body = document.querySelector('body');
 
 for (let index = 0; index < states.length; index += 1) {
     const option = document.createElement('option');
+    if (states[index] === 'Rio de Janeiro') {
+        option.selected = true;
+    }
     option.innerHTML = states[index];
     option.value = statesInitials[index];
     stateInput.appendChild(option);
@@ -98,7 +101,7 @@ function buildResume() {
 
     const nameInput = document.querySelector('#name-input');
     const emailInput = document.querySelector('#email-input');
-    const cpfInput = document.querySelector('#cpf-input');
+    const telInput = document.querySelector('#tel-input');
     const addressInput = document.querySelector('#address-input');
     const cityInput = document.querySelector('#city-input');
     const stateValue = document.querySelector('#state-input');
@@ -111,18 +114,37 @@ function buildResume() {
     divPersonalInfo.id = 'personal-infos';
     resumeDiv.appendChild(divPersonalInfo);
 
-    const h1 = document.createElement('h1');
-    h1.innerHTML = `<em>${nameInput.value}</em>`;
-    divPersonalInfo.appendChild(h1);
+    const name = document.createElement('h1');
+    name.innerHTML = `${nameInput.value}`;
+    divPersonalInfo.appendChild(name);
 
-    const p = document.createElement('h3');
-    p.innerHTML = `${emailInput.value}`;
-    divPersonalInfo.appendChild(p);
+    const email = document.createElement('h3');
+    email.innerHTML = `${emailInput.value}`;
+    divPersonalInfo.appendChild(email);
+
+    const tel = document.createElement('p');
+    tel.innerHTML = `${telInput.value}`;
+    divPersonalInfo.appendChild(tel);
+
+    const addr = document.createElement('p');
+    addr.innerHTML = `${addressInput.value} ${cityInput.value}/${stateValue.value}`;
+    divPersonalInfo.appendChild(addr);
 
     const divProfessionalInfo = document.createElement('div');
     divProfessionalInfo.id = 'professional-infos';
-    divProfessionalInfo.innerHTML = 'divProfessionalInfo';
     resumeDiv.appendChild(divProfessionalInfo);
+
+    const job = document.createElement('h4');
+    job.innerHTML = `${jobInput.value}`;
+    divProfessionalInfo.appendChild(job);
+
+    const jobD = document.createElement('span');
+    jobD.innerHTML = `<em>${jobDescriptionInput.value}</em>`;
+    divProfessionalInfo.appendChild(jobD);
+
+    const abs = document.createElement('p');
+    abs.innerHTML = `${abstractInput.value}`;
+    divProfessionalInfo.appendChild(abs);
 
 }
 
