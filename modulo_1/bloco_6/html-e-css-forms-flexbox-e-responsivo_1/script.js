@@ -58,6 +58,8 @@ const statesInitials = [
 ]
 const stateInput = document.querySelector('#state-input');
 const startDateInput = document.querySelector('#start-date-input');
+const consolidateButton = document.querySelector('#consolidate-button');
+const body = document.querySelector('body');
 
 for (let index = 0; index < states.length; index += 1) {
     const option = document.createElement('option');
@@ -66,15 +68,68 @@ for (let index = 0; index < states.length; index += 1) {
     stateInput.appendChild(option);
 }
 
-startDateInput.addEventListener('change', () => {
+function validateDate() {
     const regexDate = /^(0[1-9]|1\d|2\d|3[01])\/(0[1-9]|1[012])\/(1\d\d\d|2\d\d\d)$/;
     const startDateString = startDateInput.value;
     if (regexDate.test(startDateString)) {
-        console.log(startDateString);
         return startDateString;
     } else {
         console.log('Formato de data inválido');
         alert('Formato de data inválido');
-        return 'Formato inválido';
+        return false;
     }
+}
+
+function getHomeInput() {
+    const homeInputs = document.getElementsByName('home-input');
+    for (let index = 0; index < homeInputs.length; index += 1) {
+        if (homeInputs[index].checked) {
+            const homeInput = homeInputs[index];
+            return homeInput;
+        }
+    }
+}
+
+function buildResume() {
+    const div = document.createElement('div');
+    div.id = 'resume-div';
+    body.appendChild(div);
+    const resumeDiv = document.querySelector('#resume-div');
+
+    const nameInput = document.querySelector('#name-input');
+    const emailInput = document.querySelector('#email-input');
+    const cpfInput = document.querySelector('#cpf-input');
+    const addressInput = document.querySelector('#address-input');
+    const cityInput = document.querySelector('#city-input');
+    const stateValue = document.querySelector('#state-input');
+    const homeInput = getHomeInput();
+    const abstractInput = document.querySelector('#abstract-input');
+    const jobInput = document.querySelector('#job-input');
+    const jobDescriptionInput = document.querySelector('#job-description-input');
+
+    const divPersonalInfo = document.createElement('div');
+    divPersonalInfo.id = 'personal-infos';
+    resumeDiv.appendChild(divPersonalInfo);
+
+    const h1 = document.createElement('h1');
+    h1.innerHTML = `<em>${nameInput.value}</em>`;
+    divPersonalInfo.appendChild(h1);
+
+    const p = document.createElement('h3');
+    p.innerHTML = emailInput.value;
+    divPersonalInfo.appendChild(p);
+
+    const divProfessionalInfo = document.createElement('div');
+    divProfessionalInfo.id = 'professional-infos';
+    resumeDiv.appendChild(divProfessionalInfo);
+
+}
+
+startDateInput.addEventListener('change', validateDate);
+
+consolidateButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (validateDate()) {
+        buildResume();
+    };
 });

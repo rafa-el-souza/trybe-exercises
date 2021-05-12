@@ -9,35 +9,48 @@
 </head>
 <body>
     <fieldset>
-        <legend>Dados Pessoais</legend>
-        <label for="name-input">Nome</label>
-        <input type="text" name="name" maxlength="40" id="name-input" required>
-        <label for="email-input">E-mail</label>
-        <input type="email" name="email" id="email-input" maxlength="50" required>
-        <label for="cpf-input">CPF</label>
-        <input type="text" maxlength="11" id="cpf-input" required>
-        <label for="address-input">Endereço</label>
-        <input type="text" maxlength="200" id="address-input" required>
-        <label for="city-input">Cidade</label>
-        <input type="text" maxlength="28" id="city-input" required>
-        <label for="state-input">Estado</label>
-        <select name="state" id="state-input"></select>
-        <label for="ap-input">Apartamento</label>
-        <input type="radio" name="ap-ou-casa" value="ap" id="ap-input" checked>
-        <label for="casa-input">Casa</label>
-        <input type="radio" name="ap-ou-casa" value="casa" id="casa-input">
+        <legend id="personal-data">Dados Pessoais</legend>
+        <label for="name-input">Nome
+            <input type="text" name="name" maxlength="40" id="name-input" required value="Rafael Souza">
+        </label>
+        <label for="email-input">E-mail
+            <input type="email" name="email" id="email-input" maxlength="50" required value="h@mail.t">
+        </label>
+        <label for="cpf-input">CPF
+            <input type="text" maxlength="11" id="cpf-input" required>
+        </label>
+        <label for="address-input">Endereço
+            <input type="text" maxlength="200" id="address-input" required>
+        </label>
+        <label for="city-input">Cidade
+            <input type="text" maxlength="28" id="city-input" required>
+        </label>
+        <label for="state-input">Estado
+            <select name="state" id="state-input"></select>
+        </label>
+        <label for="ap-input">Apartamento
+            <input type="radio" name="home-input" value="ap" id="ap-input" checked>
+        </label>
+        <label for="casa-input">Casa
+            <input type="radio" name="home-input" value="casa" id="casa-input">
+        </label>
     </fieldset>
     <fieldset>
         <legend>Dados do seu último emprego</legend>
-        <label for="abstract-input">Resumo do Currículo</label>
-        <textarea name="abstract" id="abstract-input" cols="30" rows="10" maxlength="1000" required placeholder="Escreva aqui o resumo do seu currículo."></textarea>
-        <label for="job-input">Cargo</label>
-        <input type="text" name="job" id="job-input" maxlength="40" required>
-        <label for="job-description-input">Descrição do Cargo</label>
-        <input type="text" name="job-description" id="job-description-input" maxlength="500" required>
-        <label for="start-date-input">Data de Início</label>
-        <input type="text" name="start-date" id="start-date-input" required>
+        <label for="abstract-input">Resumo do Currículo
+            <textarea name="abstract" id="abstract-input" cols="30" rows="10" maxlength="1000" required placeholder="Escreva aqui o resumo do seu currículo."></textarea>
+        </label>
+        <label for="job-input">Cargo
+            <input type="text" name="job" id="job-input" maxlength="40" required>
+        </label>
+        <label for="job-description-input">Descrição do Cargo
+            <input type="text" name="job-description" id="job-description-input" maxlength="500" required>
+        </label>
+        <label for="start-date-input">Data de Início
+            <input type="text" name="start-date" id="start-date-input" required value="13/12/2011">
+        </label>
     </fieldset>
+    <button id="consolidate-button">Consolidar</button>
     <script src="script.js"></script>
 </body>
 </html>
