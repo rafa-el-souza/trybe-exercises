@@ -80,12 +80,12 @@ function validateDate() {
     }
 }
 
-function getHomeInput() {
-    const homeInputs = document.getElementsByName('home-input');
-    for (let index = 0; index < homeInputs.length; index += 1) {
-        if (homeInputs[index].checked) {
-            const homeInput = homeInputs[index];
-            return homeInput;
+function getGenderInput() {
+    const genderInputs = document.getElementsByName('gender-input');
+    for (let index = 0; index < genderInputs.length; index += 1) {
+        if (genderInputs[index].checked) {
+            const genderInput = genderInputs[index];
+            return genderInput;
         }
     }
 }
@@ -102,7 +102,7 @@ function buildResume() {
     const addressInput = document.querySelector('#address-input');
     const cityInput = document.querySelector('#city-input');
     const stateValue = document.querySelector('#state-input');
-    const homeInput = getHomeInput();
+    const genderInput = getGenderInput();
     const abstractInput = document.querySelector('#abstract-input');
     const jobInput = document.querySelector('#job-input');
     const jobDescriptionInput = document.querySelector('#job-description-input');
@@ -116,11 +116,12 @@ function buildResume() {
     divPersonalInfo.appendChild(h1);
 
     const p = document.createElement('h3');
-    p.innerHTML = emailInput.value;
+    p.innerHTML = `${emailInput.value}`;
     divPersonalInfo.appendChild(p);
 
     const divProfessionalInfo = document.createElement('div');
     divProfessionalInfo.id = 'professional-infos';
+    divProfessionalInfo.innerHTML = 'divProfessionalInfo';
     resumeDiv.appendChild(divProfessionalInfo);
 
 }
