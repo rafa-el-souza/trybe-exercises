@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Forms</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Dados Pessoais</legend>
+        <label for="name-input">Nome</label>
+        <input type="text" name="name" maxlength="40" id="name-input" required>
+        <label for="email-input">E-mail</label>
+        <input type="email" name="email" id="email-input" maxlength="50" required>
+        <label for="cpf-input">CPF</label>
+        <input type="text" maxlength="11" id="cpf-input" required>
+        <label for="address-input">Endereço</label>
+        <input type="text" maxlength="200" id="address-input" required>
+        <label for="city-input">Cidade</label>
+        <input type="text" maxlength="28" id="city-input" required>
+        <label for="state-input">Estado</label>
+        <select name="state" id="state-input"></select>
+        <label for="ap-input">Apartamento</label>
+        <input type="radio" name="ap-ou-casa" value="ap" id="ap-input" checked>
+        <label for="casa-input">Casa</label>
+        <input type="radio" name="ap-ou-casa" value="casa" id="casa-input">
+    </fieldset>
+    <script src="script.js"></script>
+</body>
+</html>
