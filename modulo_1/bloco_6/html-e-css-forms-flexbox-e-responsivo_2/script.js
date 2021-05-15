@@ -71,7 +71,7 @@ const genderInput = getGenderInput();
 const abstractInput = document.querySelector('#abstract-input');
 const jobInput = document.querySelector('#job-input');
 const jobDescriptionInput = document.querySelector('#job-description-input');
-const resumeDiv = document.querySelector('#resume-div');
+const resumeSection = document.querySelector('#resume-section');
 const inputsArray = [nameInput, startDateInput, emailInput, telInput, addressInput, cityInput, abstractInput, jobInput, jobDescriptionInput];
 
 for (let index = 0; index < states.length; index += 1) {
@@ -109,7 +109,7 @@ function getGenderInput() {
 function buildResume() {
     const divPersonalInfo = document.createElement('div');
     divPersonalInfo.id = 'personal-infos';
-    resumeDiv.appendChild(divPersonalInfo);
+    resumeSection.appendChild(divPersonalInfo);
 
     const name = document.createElement('h1');
     name.innerHTML = `${nameInput.value}`;
@@ -129,7 +129,7 @@ function buildResume() {
 
     const divProfessionalInfo = document.createElement('div');
     divProfessionalInfo.id = 'professional-infos';
-    resumeDiv.appendChild(divProfessionalInfo);
+    resumeSection.appendChild(divProfessionalInfo);
 
     const job = document.createElement('h4');
     job.innerHTML = `${jobInput.value}`;
@@ -156,9 +156,9 @@ consolidateButton.addEventListener('click', (event) => {
 
 const clearButton = document.querySelector('#clear-button');
 clearButton.addEventListener('click', () => {
-    const resumeDiv = document.querySelector('#resume-div');
-    while (resumeDiv.firstChild) {
-        resumeDiv.removeChild(resumeDiv.firstChild);
+    const resumeSection = document.querySelector('#resume-div');
+    while (resumeSection.firstChild) {
+        resumeSection.removeChild(resumeSection.firstChild);
     }
     for (let input of inputsArray) {
         input.value = '';
