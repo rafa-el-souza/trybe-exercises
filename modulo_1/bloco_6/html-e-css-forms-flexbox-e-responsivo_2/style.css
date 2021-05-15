@@ -23,6 +23,10 @@ legend {
   color: #ef5350;
 }
 
+#resume-section {
+  margin-bottom: 60px;
+}
+
 [type="radio"]:checked + span:after,
 [type="radio"].with-gap:checked + span:before,
 [type="radio"].with-gap:checked + span:after {

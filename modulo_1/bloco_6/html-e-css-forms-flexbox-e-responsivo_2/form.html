@@ -72,12 +72,11 @@
                 <legend class="blue-grey-text text-darken-3" ><h4>Dados do seu último emprego</h4></legend>
                 <div class="container">
                     <div class="row">
-                        <div class="input-field col s12">
-                            <textarea class="materialize-textarea" name="abstract" id="abstract-input" maxlength="1000" required placeholder="Escreva aqui o resumo do seu currículo."></textarea>
-                            <label for="abstract-input">Resumo do Currículo</label>
+                        <div class="input-field col s4">
+                            <input type="text" name="start-date" id="start-date-input" required>
+                            <label for="start-date-input">Data de Início</label>
                         </div>
-                    </div>
-                    <div class="row">
+                        <div class="input-field col s2"></div>
                         <div class="input-field col s6">
                             <input type="text" name="job" id="job-input" maxlength="40" required>
                             <label for="job-input">Cargo</label>
@@ -90,9 +89,9 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s6">
-                            <input type="text" name="start-date" id="start-date-input" required>
-                            <label for="start-date-input">Data de Início</label>
+                        <div class="input-field col s12">
+                            <textarea class="materialize-textarea" name="abstract" id="abstract-input" maxlength="1000" required placeholder="Escreva aqui o resumo do seu currículo."></textarea>
+                            <label for="abstract-input">Resumo do Currículo</label>
                         </div>
                     </div>
                 </div>
