@@ -10,7 +10,7 @@ const addressInput = document.querySelector('#address-input');
 const cityInput = document.querySelector('#city-input');
 const stateInput = document.querySelector('#state-input');
 const genderInput = getGenderInput();
-const startDateInput = document.querySelector('#start-date-input');
+const startDateInput = document.getElementById('start-date-input');
 const abstractInput = document.querySelector('#abstract-input');
 const jobInput = document.querySelector('#job-input');
 const jobDescriptionInput = document.querySelector('#job-description-input');
@@ -82,6 +82,11 @@ function buildResume() {
     divProfessionalInfo.appendChild(abs);
 }
 
+// Inicializa DatePickerX conforme docs
+startDateInput.DatePickerX.init({
+    format: 'dd/mm/yyyy'
+});
+
 // Input Select | Inicializa elemento select conforme Materialize Docs
 document.addEventListener('DOMContentLoaded', function() {
     // Popula elemento select com options dos arrays acima
@@ -105,8 +110,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-// Realiza validação de data quando o valor do input de data mudar
-startDateInput.addEventListener('change', validateDate);
 
 // Botão consolidar | Constrói currículo quando botão consolidar é pressionado, se data for válida
 consolidateButton.addEventListener('click', (event) => {
