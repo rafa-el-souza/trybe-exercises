@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Botão consolidar | Constrói currículo quando botão consolidar é pressionado, se data for válida
 consolidateButton.addEventListener('click', (event) => {
     event.preventDefault();
-    if (validateDate()) {
+    if (true) {
         buildResume();
     };
 });
