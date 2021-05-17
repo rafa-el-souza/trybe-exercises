@@ -4,13 +4,64 @@
     box-sizing: border-box;
 }
 
-textarea {
-    display: inline-block;
-    resize: none;
-    width: 80%;
-    margin: 0 10% 40px 10%;
-  }
-
 label {
     display: block;
+}
+
+fieldset {
+    border: 5px solid #ef5350;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+legend {
+  margin-left: 15px;
+  padding: 0 15px;
+}
+
+.select-dropdown li span{
+  color: #ef5350;
+}
+
+#resume-section {
+  margin-bottom: 60px;
+}
+
+[type="submit"] {
+  background-color: #ef5350;
+}
+
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:before,
+[type="radio"].with-gap:checked + span:after {
+  border: 2px solid #ef5350;
+}
+
+[type="radio"]:checked + span:after, 
+[type="radio"].with-gap:checked + span:after {
+ 
+  background-color: #ef5350;
+ 
+}
+
+.input-field input:focus + label {
+    color: #ef5350 !important;
+}
+
+.input-field input:focus {
+border-bottom: 1px solid #ef5350 !important;
+box-shadow: 0 1px 0 0 #ef5350 !important;
+}
+
+.input-field textarea:focus + label {
+  color: #ef5350 !important;
+}
+
+.row .input-field textarea:focus {
+  border-bottom: 1px solid #ef5350 !important;
+  box-shadow: 0 1px 0 0 #ef5350 !important;
+}
+
+input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+  color: #37474f !important;
 }
