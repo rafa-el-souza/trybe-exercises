@@ -1,0 +1,52 @@
+*, *:before, *:after {
+box-sizing: inherit;
+margin: 0;
+padding: 0;
+list-style: none;
+box-sizing: border-box;
+}
+article h1 {
+    margin: 1.2em 20px 0.67em 20px;
+    font-size: 1.8em;
+}
+article p {
+    font-size: 1.6em;
+    margin: 15px 20px;
+    line-height: 1.3em;
+}
+footer {
+    padding: 15px 40px 20px 20px;
+}
+footer p, footer h3{
+    text-align: center;
+    font-size: 0.8em;
+}
+header {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 20px;
+}
+header p {
+    font-size: 1.7em;
+    text-align: center;
+}
+nav li {
+    padding: 5px;
+    margin-left: 10px;
+}
+ul.container {
+    align-self: center;
+    background-color: aqua;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid fuchsia; */
+}
+.column {
+    flex-direction: column;
+}
+.aside-one, .aside-two {
+    display: none;
+}
+@media screen and (min-width: 555px) {
+}
