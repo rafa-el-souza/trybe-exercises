@@ -49,4 +49,22 @@ ul.container {
     display: none;
 }
 @media screen and (min-width: 555px) {
+    body {
+        background-color: aquamarine;
+    }
+    article p {
+        font-size: 1.4em;
+        margin: 15px 7%;
+        line-height: 1.4em;
+    }
+    header p {
+        font-size: 2em;
+        flex-grow: 1;
+    }
+    article h1 {
+        margin: 1.2em 20px 0.67em 7%;
+    }
+}
+@media screen and (min-width: 768px) {
+
 }
