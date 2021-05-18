@@ -1,10 +1,38 @@
 *, *:before, *:after {
-box-sizing: inherit;
 margin: 0;
 padding: 0;
 list-style: none;
 box-sizing: border-box;
 }
+header, footer, aside {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header {
+    margin: 20px 10px 0 19px; 
+    width: 90vw;
+    justify-content: space-between;
+}
+header h1 {
+    font-size: 1.6em;
+    margin-left: 15px;
+    flex: 0 1 40px;
+}
+header nav {
+    justify-content: center;
+    align-items: flex-end;
+    
+}
+header nav ul li {
+    align-self: center;
+    width: 100px;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: aqua;
+}
+article {
+    width: 100vw;;
+}
+
 article h1 {
     margin: 1.2em 20px 0.67em 20px;
     font-size: 1.8em;
@@ -13,6 +41,7 @@ article p {
     font-size: 1.6em;
     margin: 15px 20px;
     line-height: 1.3em;
+
 }
 footer {
     padding: 15px 40px 20px 20px;
@@ -21,25 +50,9 @@ footer p, footer h3{
     text-align: center;
     font-size: 0.8em;
 }
-header {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-top: 20px;
-}
-header p {
-    font-size: 1.7em;
-    text-align: center;
-}
-nav li {
-    padding: 5px;
-    margin-left: 10px;
-}
-ul.container {
-    align-self: center;
-    background-color: aqua;
-}
+
 .container {
     display: flex;
-    justify-content: space-between;
     /* border: 1px solid fuchsia; */
 }
 .column {
@@ -47,24 +60,78 @@ ul.container {
 }
 .aside-one, .aside-two {
     display: none;
+    font-size: small;
 }
+
 @media screen and (min-width: 555px) {
     body {
         background-color: aquamarine;
+    }
+    header p {
+        font-size: 2em;
+    }
+    article h1 {
+        margin: 1.2em 20px 0.67em 7%;
     }
     article p {
         font-size: 1.4em;
         margin: 15px 7%;
         line-height: 1.4em;
     }
-    header p {
-        font-size: 2em;
-        flex-grow: 1;
+    header {
+        align-items: center;
     }
-    article h1 {
-        margin: 1.2em 20px 0.67em 7%;
+    header h1 {
+        margin-left: 30px;
+        font-size: 32px;
+    }
+    header nav , header ul{
+        flex-direction: row !important;
     }
 }
-@media screen and (min-width: 768px) {
-
+@media screen and (min-width: 823px) {
+    body {
+        background-color: orangered;
+    }
+    article, footer {
+        width: 70%;
+        max-width: 800px;
+        color: white;
+    }
+    header {
+        width: 70%;
+        justify-content: space-between;
+    }
+    header h1 {
+        flex: 1 0 300px;
+        font-size: 38px;
+        text-shadow: 2px 1px orange;
+        margin-left: 20px;
+    }
+    aside li {
+        font-size: 1.1em;
+        padding: 10px 20px;
+        text-shadow: 2px 1px orange;
+        line-height: 1.0em;
+        background-color: aqua;
+        width: 200px;
+    }
+    aside h2 {
+        margin: 7px 0;
+        font-size: 2em;
+        color: white;
+        text-align: center;
+    }
+    .aside-one, .aside-two {
+        display: flex;
+    }
+    .aside {
+    width: 20%;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    left: 75%;
+    height: 100%;
+    }
 }
