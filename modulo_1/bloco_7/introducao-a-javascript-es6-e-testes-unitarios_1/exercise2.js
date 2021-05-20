@@ -4,8 +4,9 @@
 //   
 //  Spoiler: É possível realizar uma função que ordene qualquer array de números.
 
-const oddsAndEvens = [13, 3, 4, 10, 7, 2];
+let oddsAndEvens = [13, 3, 4, 10, 7, 2];
 
 oddsAndEvens.sort((a, b) => a-b);
+oddsAndEvens = `Os números ${oddsAndEvens.join(', ')} se encontram ordenados de forma crescente!`;
 
 console.log(oddsAndEvens);
