@@ -75,3 +75,13 @@ console.log(studentsTotal(allLessons));
 const getValueByPosition = (object, position) => Object.values(object)[position];
 console.log(getValueByPosition(lesson1, 0));
 
+const verifyPair = (object, key, value) => {
+    for (let index = 0; index < Object.values(object).length; index += 1) {
+        if (Object.values(object)[index] == value && Object.keys(object)[index] == key) {
+            return true;
+        }
+    }
+    return false;
+};
+console.log(Object.entries(lesson2));
+console.log(verifyPair(lesson2, 'numeroEstudantes', '20'));
