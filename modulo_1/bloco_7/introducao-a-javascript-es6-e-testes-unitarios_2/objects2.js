@@ -105,3 +105,19 @@ Bonus:
     estudantes: 30
     } 
 */
+
+//11.
+const mathStudentsCounter = (object) => {
+    let studentsCounter = 0;
+    if (object.lesson1.materia === 'Matemática') {
+        studentsCounter += object.lesson1.numeroEstudantes;
+    } 
+    if (object.lesson2.materia == 'Matemática') {
+        studentsCounter += object.lesson2.numeroEstudantes;
+    } 
+    if (object.lesson3.materia === 'Matemática') {
+        studentsCounter += object.lesson3.numeroEstudantes;
+    }
+    return studentsCounter;
+};
+console.log(mathStudentsCounter(allLessons));
