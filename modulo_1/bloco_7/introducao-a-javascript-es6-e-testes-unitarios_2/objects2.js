@@ -52,3 +52,26 @@ numeroEstudantes: 10,
 professor: 'Maria Clara',
 turno: 'noite',
 };
+
+const addMorningShift = (object, key, value) => object[key] = value;
+addMorningShift(lesson2, 'turno', 'manhã');
+console.log(lesson2);
+
+const showKeys = (object) => `This object's keys are ${Object.keys(object)}.`;
+console.log(showKeys(lesson2));
+
+const showLength = (object) => `This object has ${Object.keys(object).length} entries.`;
+console.log(showLength(lesson2));
+
+const showValues = (object) => `This object's values are ${Object.values(object)}.`;
+console.log(showValues(lesson2));
+
+const allLessons = Object.assign({lesson1, lesson2, lesson3});
+console.log(allLessons);
+
+const studentsTotal = (object) => `O total de estudantes em todas as aulas é ${object.lesson1.numeroEstudantes + object.lesson2.numeroEstudantes + object.lesson3.numeroEstudantes}.`;
+console.log(studentsTotal(allLessons));
+
+const getValueByPosition = (object, position) => Object.values(object)[position];
+console.log(getValueByPosition(lesson1, 0));
+
