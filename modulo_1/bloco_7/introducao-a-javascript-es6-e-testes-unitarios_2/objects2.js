@@ -112,7 +112,7 @@ const mathStudentsCounter = (object) => {
     if (object.lesson1.materia === 'Matemática') {
         studentsCounter += object.lesson1.numeroEstudantes;
     } 
-    if (object.lesson2.materia == 'Matemática') {
+    if (object.lesson2.materia === 'Matemática') {
         studentsCounter += object.lesson2.numeroEstudantes;
     } 
     if (object.lesson3.materia === 'Matemática') {
@@ -121,3 +121,27 @@ const mathStudentsCounter = (object) => {
     return studentsCounter;
 };
 console.log(mathStudentsCounter(allLessons));
+
+//12.
+const createReport = (object, teacher) => {
+    const report = {};
+    const aulas = [];
+    let studentsCounter = 0;
+    if (object.lesson1.professor === teacher) {
+        aulas.push(object.lesson1.materia);
+        studentsCounter += object.lesson1.numeroEstudantes;
+    }
+    if (object.lesson2.professor === teacher) {
+        aulas.push(object.lesson2.materia);
+        studentsCounter += object.lesson2.numeroEstudantes;
+    }
+    if (object.lesson3.professor === teacher) {
+        aulas.push(object.lesson3.materia);
+        studentsCounter += object.lesson3.numeroEstudantes;
+    }
+    report.professor = teacher;
+    report.aulas = aulas;
+    report.estudantes = studentsCounter;
+    return report;
+};
+console.log(createReport(allLessons, 'Maria Clara'));
