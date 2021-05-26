@@ -35,7 +35,7 @@ A mana consumida por turno é 15. Além disto a função deve ter uma condiciona
 Parte II
 Agora que você já possui a implementação das funções relativas aos três exercícios anteriores, passe-as como parâmetro para outras funções que irão compor um objeto gameActions . O objeto será composto por ações do jogo e cada ação é por denifição uma HOF , pois neste caso, são funções que recebem como parâmetro outra função.
 Copie o código abaixo e inicie sua implementação:
-Copiar
+
 const gameActions = {
   // Crie as HOFs neste objeto.
 };
@@ -44,3 +44,93 @@ const gameActions = {
 3 - Crie a terceira HOF que compõe o objeto gameActions . Ela será a função que simula o turno do monstro dragon . Esta HOF receberá como parâmetro a função que calcula o dano deferido pelo monstro dragon e atualizará os healthPoints dos personagens mage e warrior . Além disto ela também deve atualizar o valor da chave damage do monstro.
 4 - Adicione ao objeto gameActions uma função que retorne o objeto battleMembers atualizado e faça um console.log para visualizar o resultado final do turno. 
 */
+
+const mage = {
+  healthPoints: 130,
+  intelligence: 45,
+  mana: 125,
+  damage: 0,
+};
+
+const warrior = {
+  healthPoints: 200,
+  strength: 30,
+  weaponDmg: 2,
+  damage: 0,
+};
+
+const dragon = {
+  healthPoints: 350,
+  strength: 50,
+  damage: 0,
+};
+
+const battleMembers = { mage, warrior, dragon };
+
+const dragonMinDamage = 15;
+const manaPerTurn = 15;
+
+// Parte 1
+//1.
+const dragonDamage = () =>
+  Math.floor(
+    Math.random() * (dragon.strength - dragonMinDamage + 1) + dragonMinDamage
+  );
+
+//2.
+const warriorDamage = () =>
+  Math.floor(
+    Math.random() *
+      (warrior.strength * warrior.weaponDmg - warrior.strength + 1) +
+      warrior.strength
+  );
+
+//3.
+const mageDamage = () => {
+  if (mage.mana < manaPerTurn) {
+    return {
+      damage: 'Não possui mana suficiente',
+      mana: 0,
+    };
+  }
+  return {
+    damage: Math.floor(
+      Math.random() * (mage.intelligence * 2 - mage.intelligence + 1) +
+        mage.intelligence
+    ),
+    mana: 15,
+  };
+};
+
+// Parte 2: 1 a 4
+const gameActions = {
+  warriorTurn: (callback) => {
+    const warriorDamage = callback();
+    dragon.healthPoints -= warriorDamage;
+    warrior.damage += warriorDamage;
+  },
+  mageTurn: (callback) => {
+    const mageDamage = callback();
+    if (typeof mageDamage.damage === 'number') {
+      dragon.healthPoints -= mageDamage.damage;
+      mage.damage += mageDamage.damage;
+    }
+    mage.mana -= mageDamage.mana;
+  },
+  dragonTurn: (callback) => {
+    const dragonDamage = callback();
+    warrior.healthPoints -= dragonDamage;
+    mage.healthPoints -= dragonDamage;
+    dragon.damage += dragonDamage;
+  },
+  turnResult: () => {
+    console.log(battleMembers);
+  },
+};
+
+for (let index = 0; index < 4; index += 1) {
+  gameActions.warriorTurn(warriorDamage);
+  gameActions.mageTurn(mageDamage);
+  gameActions.dragonTurn(dragonDamage);
+  gameActions.turnResult();
+}
