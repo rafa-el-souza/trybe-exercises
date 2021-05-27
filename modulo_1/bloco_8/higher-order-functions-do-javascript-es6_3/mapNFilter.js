@@ -1,5 +1,6 @@
 const assert = require('assert');
 
+const currentYear = 2021;
 const books = [
   {
     id: 1,
@@ -199,7 +200,6 @@ const expectedResult4 = [
 
 function oldBooksOrdered() {
   // escreva seu código aqui
-  const currentYear = 2021;
   return books
     .filter((book) => currentYear - book.releaseYear > 60)
     .sort((a, b) => a.releaseYear - b.releaseYear);
@@ -218,7 +218,23 @@ const expectedResult5 = [
 
 function fantasyOrScienceFictionAuthors() {
   // escreva seu código aqui
-  return books.filter((book) => (book.genre === 'Ficção Científica' || book.genre === 'Fantasia')).map((book) => book.author.name).sort();
+  return books
+    .filter((book) => book.genre === 'Ficção Científica' || book.genre === 'Fantasia')
+    .map((book) => book.author.name)
+    .sort();
 }
 
 assert.deepStrictEqual(fantasyOrScienceFictionAuthors(), expectedResult5);
+
+// 6 - Crie um array com o nome de todos os livros com mais de 60 anos de publicação.
+
+const expectedResult6 = ['O Senhor dos Anéis', 'Fundação', 'O Chamado de Cthulhu'];
+
+function oldBooks() {
+  // escreva seu código aqui
+  return books
+    .filter((book) => currentYear - book.releaseYear > 60)
+    .map((book) => book.name);
+}
+
+assert.deepStrictEqual(oldBooks(), expectedResult6);
