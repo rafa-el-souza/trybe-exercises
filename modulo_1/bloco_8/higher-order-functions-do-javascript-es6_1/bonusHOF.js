@@ -73,15 +73,12 @@ const manaPerTurn = 15;
 // Parte 1
 //1.
 const dragonDamage = () =>
-  Math.floor(
-    Math.random() * (dragon.strength - dragonMinDamage + 1) + dragonMinDamage
-  );
+  Math.floor(Math.random() * (dragon.strength - dragonMinDamage + 1) + dragonMinDamage);
 
 //2.
 const warriorDamage = () =>
   Math.floor(
-    Math.random() *
-      (warrior.strength * warrior.weaponDmg - warrior.strength + 1) +
+    Math.random() * (warrior.strength * warrior.weaponDmg - warrior.strength + 1) +
       warrior.strength
   );
 
@@ -95,8 +92,7 @@ const mageDamage = () => {
   }
   return {
     damage: Math.floor(
-      Math.random() * (mage.intelligence * 2 - mage.intelligence + 1) +
-        mage.intelligence
+      Math.random() * (mage.intelligence * 2 - mage.intelligence + 1) + mage.intelligence
     ),
     mana: 15,
   };
@@ -128,6 +124,7 @@ const gameActions = {
   },
 };
 
+//
 for (let index = 0; index < 4; index += 1) {
   gameActions.warriorTurn(warriorDamage);
   gameActions.mageTurn(mageDamage);
