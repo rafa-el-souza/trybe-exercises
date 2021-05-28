@@ -102,3 +102,17 @@ function averageAge() {
 }
 
 assert.strictEqual(averageAge(), expectedResult3);
+
+// 4 - Encontre o livro com o maior nome.
+
+const expectedResult4 = 'As Crônicas de Gelo e Fogo';
+
+function longestNamedBook() {
+  // escreva seu código aqui
+  return books.reduce(
+    (acc, book) => (acc.length > book.name.length ? acc : book.name),
+    ''
+  );
+}
+
+assert.deepStrictEqual(longestNamedBook(), expectedResult4);
