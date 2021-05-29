@@ -81,14 +81,21 @@ const books = [
 
 // 2 - Crie uma string com os nomes de todas as pessoas autoras.
 
-// const expectedResult = 43;
+const expectedResult =
+  'George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.';
 
-// function averageAge() {
-//   // escreva seu código aqui
+function reduceNames() {
+  // escreva seu código aqui
+  return books.reduce(
+    (acc, book, index) =>
+      index === books.length - 1
+        ? `${acc}${book.author.name}.`
+        : `${acc}${book.author.name}, `,
+    ''
+  );
+}
 
-// }
-
-// assert.strictEqual(averageAge(), expectedResult);
+assert.strictEqual(reduceNames(), expectedResult);
 
 // 3 - Calcule a média de idade que as pessoas autoras tinham quando seus respectivos livros foram lançados.
 
@@ -97,7 +104,9 @@ const expectedResult3 = 43;
 function averageAge() {
   // escreva seu código aqui
   const ageSum = books.reduce(
-    (acc, book) => acc + book.releaseYear - book.author.birthYear, 0);
+    (acc, book) => acc + book.releaseYear - book.author.birthYear,
+    0
+  );
   return ageSum / books.length;
 }
 
@@ -116,7 +125,6 @@ function longestNamedBook() {
 }
 
 assert.deepStrictEqual(longestNamedBook(), expectedResult4);
-
 
 // 5 - Dada a array de nomes, retorne a quantidade de vezes em que aparecem a letra a maiúscula ou minúscula.
 
@@ -150,6 +158,10 @@ const grades = [
 
 function studentAverage() {
   // escreva seu código aqui
+  return students.map((student, index) => ({
+    name: student,
+    average: grades[index].reduce((acc, curr) => acc + curr, 0) / grades[index].length,
+  }));
 }
 
 const expected = [
