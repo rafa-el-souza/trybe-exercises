@@ -1,10 +1,9 @@
 // 2 - Crie uma função sum que dado um número variável de elementos retorna a soma desses elementos. Ou seja:
 
-
 const assert = require('assert');
 
 // escreva sum abaixo
-const sum = (...args) => args.reduce((acc, arg) => acc + arg, 0);;
+const sum = (...args) => args.reduce((acc, arg) => acc + arg, 0);
 
 assert.strictEqual(sum(), 0);
 assert.strictEqual(sum(1), 1);
