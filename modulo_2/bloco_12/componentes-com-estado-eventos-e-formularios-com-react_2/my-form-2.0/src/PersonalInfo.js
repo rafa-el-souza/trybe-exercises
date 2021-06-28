@@ -7,6 +7,7 @@ class PersonalInfo extends Component {
     this.state = {
       nome: '',
       email: '',
+      cpf: '',
     }
   }
   handleChange({ target }) {
@@ -31,6 +32,14 @@ class PersonalInfo extends Component {
           value={this.state.email} 
           onChange={this.handleChange}
           maxLength="50"
+          required
+        />
+        <input 
+          type="text" 
+          name="cpf" 
+          value={this.state.cpf} 
+          onChange={this.handleChange}
+          maxLength="11"
           required
         />
       </fieldset>
