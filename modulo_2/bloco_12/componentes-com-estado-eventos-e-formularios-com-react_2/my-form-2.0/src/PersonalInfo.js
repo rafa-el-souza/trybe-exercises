@@ -6,6 +6,7 @@ class PersonalInfo extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.state = {
       nome: '',
+      email: '',
     }
   }
   handleChange({ target }) {
@@ -22,6 +23,14 @@ class PersonalInfo extends Component {
           value={this.state.nome} 
           onChange={this.handleChange}
           maxLength="40"
+          required
+        />
+        <input 
+          type="text" 
+          name="email" 
+          value={this.state.email} 
+          onChange={this.handleChange}
+          maxLength="50"
           required
         />
       </fieldset>
