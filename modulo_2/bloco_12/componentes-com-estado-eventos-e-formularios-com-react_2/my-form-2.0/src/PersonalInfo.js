@@ -8,6 +8,7 @@ class PersonalInfo extends Component {
       nome: '',
       email: '',
       cpf: '',
+      endereço: '',
     }
   }
   handleChange({ target }) {
@@ -40,6 +41,14 @@ class PersonalInfo extends Component {
           value={this.state.cpf} 
           onChange={this.handleChange}
           maxLength="11"
+          required
+        />
+        <input 
+          type="text" 
+          name="endereço" 
+          value={this.state.endereço} 
+          onChange={this.handleChange}
+          maxLength="200"
           required
         />
       </fieldset>
