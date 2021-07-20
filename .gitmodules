@@ -1,0 +1,3 @@
+[submodule "modulo_2/bloco_13/ciclo-de-vida-de-componentes-e-react-router_1/exercise-dog-image"]
+	path = modulo_2/bloco_13/ciclo-de-vida-de-componentes-e-react-router_1/exercise-dog-image
+	url = git@github.com:rafaelmvsouza/exercise-dog-image.git
